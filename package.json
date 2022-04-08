@@ -1,0 +1,17 @@
+{
+  "name": "sample_prisma",
+  "version": "1.0.0",
+  "description": "prismaの実験用リポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init:db": "docker compose exec -it mysql mysql -u root < database/world.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "GitHub:TakedaTakumi/SamplePrisma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
