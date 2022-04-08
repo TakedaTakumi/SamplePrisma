@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mysql:
+    platform: linux/x86_64
+    image: mysql:latest
+    volumes:
+      # - data-volume:/var/lib/mysql
+      - ./etc/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./etc/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database:/src
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - TZ=Asia/Tokyo
+    ports:
+      - 3306:3306
+    cap_add:
+      - SYS_NICE
+    healthcheck:
+      test: mysqladmin ping -h mysql -uroot
+
+# volumes:
+  # data-volume:
