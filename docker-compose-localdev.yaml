@@ -1,0 +1,11 @@
+version: "3"
+services:
+  node:
+    image: node:14-buster
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/work
+    working_dir: /work
+#    ports:
+#      - 3000:3000
