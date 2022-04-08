@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "init:db": "docker compose exec -it mysql mysql -u root < database/world.sql"
+    "init:db": "docker compose exec -it mysql mysql -u root < database/world.sql",
+    "start": "ts-node src/index.ts",
+    "prettier": "prettier --write --ignore-path .gitignore \"**/*.(js|ts)\"",
+    "lint": "eslint --ext \".ts\" --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext \".ts\" --ignore-path .gitignore .",
+    "format": "yarn prettier && yarn lint --fix"
   },
   "repository": {
     "type": "git",
@@ -13,5 +18,19 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "v16",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "prisma": "^3.12.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.12.0"
+  }
 }

@@ -17,6 +17,15 @@ services:
       - SYS_NICE
     healthcheck:
       test: mysqladmin ping -h mysql -uroot
+  server:
+    image: node:16-buster
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/work
+    working_dir: /work
+    ports:
+      - 5555:5555
 
 # volumes:
   # data-volume:
