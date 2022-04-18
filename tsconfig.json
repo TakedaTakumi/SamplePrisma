@@ -24,8 +24,8 @@
 		"allowUnusedLabels": true ,
 		"allowUnreachableCode": true ,
 		"skipLibCheck": true ,
-		"sourceMat": true,
-		"ourDir": "dist",
+		"sourceMap": true,
+		"outDir": "dist",
 		"lib": ["esnext"],
 		"baseUrl": "./src"
 	},
